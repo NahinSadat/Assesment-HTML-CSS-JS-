@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iMac Product Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Image selection functionality
+            const mainImage = document.getElementById("mainImage");
+            const thumbnails = document.querySelectorAll(".thumbnail");
+            
+            thumbnails.forEach(thumbnail => {
+                thumbnail.addEventListener("click", function() {
+                    mainImage.src = this.src;
+                });
+            });
+
+            // Smooth scrolling for sections
+            document.querySelectorAll("a[href^='#']").forEach(anchor => {
+                anchor.addEventListener("click", function(event) {
+                    event.preventDefault();
+                    document.querySelector(this.getAttribute("href")).scrollIntoView({
+                        behavior: "smooth"
+                    });
+                });
+            });
+        });
+    </script>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-white p-4 shadow-md flex justify-between items-center">
+        <h1 class="text-blue-500 text-lg font-bold">tokogadget</h1>
+        <div class="flex items-center space-x-4">
+            <span class="text-gray-600">Taufik</span>
+            <span class="text-red-500">🔔 2</span>
+        </div>
+    </header>
+    
+    <main class="max-w-6xl mx-auto p-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-white p-6 rounded-lg shadow-lg">
+            <!-- Left: Product Image -->
+            <div>
+                <img id="mainImage" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYiJkuSNkDvPXeI4MwsXmx6sAS2dueKrDAkA&s" alt="iMac" class="w-full rounded-lg">
+                <div class="flex space-x-2 mt-2">
+                    <img src="https://www.apple.com/v/imac-24/c/images/specs/colors_silver__eeshorz7d9ci_large.jpg" class="w-16 h-16 border rounded-lg thumbnail">
+                    <img src="https://www.apple.com/v/imac-24/c/images/specs/colors_silver__eeshorz7d9ci_large.jpg" class="w-16 h-16 border rounded-lg thumbnail">
+                    <img src="https://www.apple.com/v/imac-24/c/images/specs/colors_silver__eeshorz7d9ci_large.jpg" class="w-16 h-16 border rounded-lg thumbnail">
+                </div>
+            </div>
+            
+            <!-- Right: Product Details -->
+            <div>
+                <h2 class="text-2xl font-semibold">iMac 24-inch (M1 Pro chip, 8GB RAM)</h2>
+                <p class="text-yellow-500 text-sm">★★★★★ 999 Gulshan • Tejgaon 1,182</p>
+                
+                <div class="mt-4">
+                    <p class="font-semibold">Model:</p>
+                    <div class="flex flex-wrap space-x-2">
+                        <button class="px-3 py-1 border rounded-lg">7-Core GPU</button>
+                        <button class="px-3 py-1 border rounded-lg">8-Core GPU</button>
+                    </div>
+                </div>
+                
+                <div class="mt-4">
+                    <p class="font-semibold">Memory:</p>
+                    <div class="flex flex-wrap space-x-2">
+                        <button class="px-3 py-1 border rounded-lg">256GB</button>
+                        <button class="px-3 py-1 border rounded-lg">512GB</button>
+                        <button class="px-3 py-1 border rounded-lg">1TB</button>
+                    </div>
+                </div>
+                
+                <div class="mt-4">
+                    <p class="font-semibold">colour:</p>
+                    <div class="flex flex-wrap space-x-2">
+                        <span class="w-6 h-6 bg-gray-400 rounded-full"></span>
+                        <span class="w-6 h-6 bg-blue-500 rounded-full"></span>
+                        <span class="w-6 h-6 bg-red-500 rounded-full"></span>
+                        <span class="w-6 h-6 bg-yellow-500 rounded-full"></span>
+                    </div>
+                </div>
+                
+                <p class="text-lg font-bold mt-4">Tk 19.800.000</p>
+                <button class="w-full bg-blue-500 text-white py-2 mt-4 rounded-lg">+ cart</button>
+            </div>
+        </div>
+        
+        <!-- Specifications -->
+        <section id="specifications" class="bg-white p-6 mt-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-semibold">Specification</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4 text-sm">
+                <p><strong>Brand:</strong> Apple</p>
+                <p><strong>Camera:</strong> FaceTime HD 1080p</p>
+                <p><strong>Processor:</strong> Apple M1 Chip</p>
+                <p><strong>Audio:</strong> High-fidelity speaker with Dolby Atmos</p>
+                <p><strong>Memory:</strong> 8GB Integrated</p>
+                <p><strong>Wi-Fi:</strong> Wi-Fi 6 802.11ax</p>
+            </div>
+        </section>
+        
+        <!-- Reviews Section -->
+        <section id="reviews" class="bg-white p-6 mt-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-semibold">Reveiw</h3>
+            <p class="mt-2 text-gray-700 italic">"Product is very good and fully fresh I recommend it." - <strong>Adi</strong></p>
+            <p class="mt-2 text-gray-700 italic">"It was a great experience!" - <strong>Bella</strong></p>
+        </section>
+        
+        <!-- Related Products -->
+        <section id="related-products" class="bg-white p-6 mt-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-semibold">Related Products</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
+                <div class="text-center">
+                    <img src="https://9to5mac.com/wp-content/uploads/sites/6/2021/10/MacBook-Pro-2021.jpg?quality=82&strip=all&w=1024" class="w-full rounded-lg">
+                    <p class="mt-2">MacBook Pro</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://gfx3.senetic.com/akeneo-catalog/0/5/0/1/05012620a8a3d6e4ba82443f252f538aa47dc743_1728203_MNXL3_image7.jpg" class="w-full rounded-lg">
+                    <p class="mt-2">iPad Pro</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJO38-riUItuOnW17KpPN5qYsGCBEFQWKWYA&s" class="w-full rounded-lg">
+                    <p class="mt-2">Mac Mini</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT4Qay-xj2z28vhXeKUoglE7ey3DgkNh-j8A&s" class="w-full rounded-lg">
+                    <p class="mt-2">Apple Display</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
